@@ -5,15 +5,24 @@
 This project focuses on data extraction using the Salesforce REST API. It involves extracting information from the Salesforce Accounts table using an AWS Lambda function, which then stores the data in S3 buckets. This event serves as a trigger for another Lambda function responsible for data transformation. The second Lambda function imports the new data from the previous S3 bucket, transforms it, and stores it back into a different S3 bucket. The entire process is implemented using Python.
 
 ## Architecture
+![Architecture](https://github.com/ncosta90/aws-salesforce-lambda-data-engineering-extraction-project/blob/main/Architecture.jpeg)
 
+## Salesforce Account Table
 
+The Account table in Salesforce contains information about companies or organizations with which you do business. For this project, we are focusing only on the following fields:
 
-Implement Complete Data Pipeline Data Engineering Project using Salesforce REST API
+Id: The unique identifier for each account.
+Name: The name of the account (company or organization).
+Creation Date: The date when the account was created.
+Owner Region: The geographic region of the account owner.
+Size/Number of Employees: The size of the account in terms of employee count.
 
-Integrating with SFDC REST API and extracting Data
-Deploying code on AWS Lambda for Data Extraction
-Adding trigger to run the extraction automatically
-Writing transformation function
-Building automated trigger on transformation function
-Store files on S3 properly
-Building Analytics Tables on data files using Glue and Athena
+We will update our customer table every 4 hours using AWS Lambda and CloudWatch to ensure the data remains current.
+
+## AWS Services Used
+1. **S3 (Simple Storage Service):** Scalable object storage for storing and retrieving any amount of data.
+2. **AWS Lambda:** Serverless compute service that runs code in response to events.
+3. **Cloud Watch:** Monitoring and observability service for tracking AWS resources and applications.
+4. **AWS Glue Crawler:** Automatically discovers and catalogs data for analytics.
+5. **Data Catalog:** Metadata repository for managing and searching data.
+6. **Amazon Athena:** SQL-based query service for analyzing data in S3.
