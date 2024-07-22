@@ -1,8 +1,10 @@
 # AWS-SFDC-Lambda: Data engineering extraction project
 
-## Overview
+## Project Overview
 
-This project focuses on data extraction using the Salesforce REST API. It involves extracting information from the Salesforce Accounts table using an AWS Lambda function, which then stores the data in S3 buckets. This event serves as a trigger for another Lambda function responsible for data transformation. The second Lambda function imports the new data from the previous S3 bucket, transforms it, and stores it back into a different S3 bucket. The entire process is implemented using Python.
+This project focuses on data extraction using the Salesforce REST API. It involves extracting information from the Salesforce Accounts table using an AWS Lambda function + Cloud Watch, which then stores the data in S3 buckets. This event triggers another Lambda function responsible for data transformation. The second Lambda function imports the new data from the first S3 bucket, transforms it, and stores it back into a different S3 bucket.
+
+Following this, AWS Glue Crawler and Data Catalog are used to automatically discover and catalog the new data, making it available for querying. Finally, Amazon Athena is used to analyze the transformed data directly from the S3 buckets using SQL queries.
 
 ## Architecture
 ![Architecture](https://github.com/ncosta90/aws-salesforce-lambda-data-engineering-extraction-project/blob/main/Architecture.jpeg)
