@@ -1,4 +1,4 @@
-# aws-salesforce-lambda-data-engineering-extraction-project
+# AWS-SFDC-Lambda: Data engineering extraction project
 
 ## Overview
 
