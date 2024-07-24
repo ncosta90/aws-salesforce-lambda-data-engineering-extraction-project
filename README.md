@@ -13,13 +13,17 @@ Following this, AWS Glue Crawler and Data Catalog are used to automatically disc
 
 The Account table in Salesforce contains information about companies or organizations with which you do business. For this project, we are focusing only on the following fields:
 
-Id: The unique identifier for each account.
-Name: The name of the account (company or organization).
-Creation Date: The date when the account was created.
-Owner Region: The geographic region of the account owner.
-Size/Number of Employees: The size of the account in terms of employee count.
+**_Id_**: The unique identifier for each account.
 
-We will update our customer table every 4 hours using AWS Lambda and CloudWatch to ensure the data remains current.
+**_Name_**: The name of the account (company or organization).
+
+**_Creation Date_**: The date when the account was created.
+
+**_Owner Region_**: The geographic region of the account owner.
+
+**_Size/Number of Employees_**: The size of the account in terms of employee count.
+
+The company needs to update the customer table every 4 hours using AWS Lambda and CloudWatch to ensure the data remains current.
 
 ## AWS Services Used
 1. **S3 (Simple Storage Service):** Scalable object storage for storing and retrieving any amount of data.
